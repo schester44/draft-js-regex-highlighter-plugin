@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 
 const Highlighter = props => {
     // TODO: Currently this component renders only one child. Should support the entire {props.children}
