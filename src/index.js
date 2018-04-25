@@ -4,12 +4,12 @@ import { findAllPossibleVariables } from "./utils"
 import Highlighter from "./Highlighter"
 
 const createHighlighterPlugin = ({ component, regex, theme, secondaryRegex, variables = {} }) => {
-    // allow the user to overwrite our component
+	// allow the user to overwrite our component
 	const decoratedComponent = component ? component : Highlighter
 
 	return [
 		{
-			strategy: (contentBlock, callback) => findAllPossibleVarPiables(contentBlock, regex, callback),
+			strategy: (contentBlock, callback) => findAllPossibleVariables(contentBlock, regex, callback),
 			component: decorateComponentWithProps(decoratedComponent, { variables, secondaryRegex, theme })
 		}
 	]
