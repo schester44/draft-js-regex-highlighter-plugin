@@ -15,7 +15,7 @@ npm i --save draft-js-regex-highlighter-plugin
 then import from your editor component
 
 ```js
-import createHighlighterPlugin from "draft-js-regex-highlighter-plugin"
+import { createHighlighterPlugin } from "draft-js-regex-highlighter-plugin"
 ```
 
 ## Example
@@ -25,7 +25,7 @@ This example uses a regex to match all {{ handlebar }} variables.
 ```js
 import React, { Component } from "react"
 import { Editor } from "react-draft-wysiwyg"
-import createHighlighterPlugin from "draft-js-regex-highlighter-plugin"
+import { createHighlighterPlugin } from "draft-js-regex-highlighter-plugin"
 import { EditorState } from "draft-js"
 
 const highlighterConfig = {
@@ -84,7 +84,7 @@ theme | object | | Theme object for styling the valid and invalid matches
 
 MIT
 
-[demo]: https://stackblitz.com/edit/react-q1g4jg
+[demo]: https://stackblitz.com/edit/react-dmbctm
 [draftjs]: https://facebook.io/draft-js
 [react-draft-wysiwig]: https://github.com/jpuri/react-draft-wysiwyg
 [npm]: https://www.npmjs.com/package/draft-js-regex-highlighter-plugin
