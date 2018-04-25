@@ -1,0 +1,16 @@
+{
+  "name": "draft-js-regex-highlighter-plugin",
+  "version": "1.0.0",
+  "description": "Draft.js plugin for styling valid/invalid content based on regex matches",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Steve Chester",
+  "license": "MIT",
+  "peerDependencies": {
+    "decorate-component-with-props": "^1.1.0",
+    "draft-js": "^0.10.5",
+    "react": "^16.3.2"
+  }
+}
