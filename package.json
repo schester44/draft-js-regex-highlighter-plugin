@@ -1,6 +1,6 @@
 {
   "name": "draft-js-regex-highlighter-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Draft.js plugin for styling valid/invalid content based on regex matches",
   "main": "dist/bundle.js",
   "scripts": {
