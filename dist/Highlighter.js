@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-   value: true
+	value: true
 });
 
 var _react = require("react");
@@ -11,26 +11,27 @@ var React = _interopRequireWildcard(_react);
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 var Highlighter = function Highlighter(props) {
-   // TODO: Currently this component renders only one child. Should support the entire {props.children}
-   var child = props.children[0];
+	// TODO: Currently this component renders only one child. Should support the entire {props.children}
+	var child = props.children[0];
+	var theme = props.theme || {};
 
-   // secondaryRegex allows for a more granular check on the regex
-   var hasRegex = !!props.secondaryRegex;
+	var variableExists = !!props.variables[child.props.text];
+	var hasRegex = !!props.secondaryRegex;
+	var hasVariables = Object.keys(props.variables).length > 0;
 
-   // can match the text against an object of strings
-   var variableExists = !!props.variables[child.props.text];
-   var theme = props.theme || {};
+	var isValid = true;
 
-   // if the user supplied variables, check to see if the variable name exists.
-   // if they did not supply variables, check to see if they supplied a secondary regex to match against
-   // else just default to true
-   var isValid = variableExists ? true : hasRegex ? props.secondaryRegex.exec(child.props.text) : true;
+	if (hasVariables) {
+		isValid = variableExists;
+	} else if (hasRegex) {
+		isValid = !!props.secondaryRegex.exec(child.props.text);
+	}
 
-   return React.createElement(
-      "span",
-      { style: isValid ? theme.valid : theme.invalid },
-      child
-   );
+	return React.createElement(
+		"span",
+		{ style: isValid ? theme.valid : theme.invalid },
+		child
+	);
 };
 
 exports.default = Highlighter;
