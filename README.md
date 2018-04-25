@@ -76,10 +76,6 @@ variables | object | | An object of strings to further drill down on validity of
 component | Node | | Optional React component to render instead of the default Highlighter component
 theme | object | | Theme object for styling the valid and invalid matches
 
-## TODO
-
-1. bundle package
-
 ## License
 
 MIT
